@@ -31,7 +31,7 @@ public class LinkedList {
             System.out.println("List is empty");
             return;
         }
-        System.out.println("Nodes of linked list: ");
+        //System.out.println("Nodes of linked list: ");
         while (current != null) {
             // Prints each node by incrementing pointer
             System.out.print(current.data + " ");
@@ -59,6 +59,36 @@ public class LinkedList {
         }
         return data;
     }
+    void delete(int position)
+    {
+        // If linked list is empty
+        if (head == null)
+            return;
+
+        // Store head node
+        Node temp = head;
+
+        // If head needs to be removed
+        if (position == 0)
+        {
+            head = temp.next;   // Change head
+            return;
+        }
+
+        // Find previous node of the node to be deleted
+        for (int i=0; temp!=null && i<position-1; i++)
+            temp = temp.next;
+
+        // If position is more than number of nodes
+        if (temp == null || temp.next == null)
+            return;
+
+        // Node temp->next is the node to be deleted
+        // Store pointer to the next of node to be deleted
+        Node next = temp.next.next;
+
+        temp.next = next;  // Unlink the deleted node from list
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to linkedlist program");
@@ -75,5 +105,9 @@ public class LinkedList {
 
         System.out.println();
         sList.searchNode(30);
+
+        sList.delete(0);
+        System.out.println("\nLinked List after Deletion : ");
+        sList.display();
     }
 }
