@@ -11,5 +11,10 @@ public class Main {
         queue.enQueue(40);
         queue.enQueue(60);
         queue.display();
+
+        System.out.println();
+        System.out.println("After deleting element from the queue");
+        queue.deQueue();
+        queue.display();
     }
 }
