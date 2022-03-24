@@ -90,6 +90,19 @@ public class LinkedList {
         temp.next = next;  // Unlink the deleted node from list
     }
 
+    public int size( )
+    {
+        int count = 0;
+        Node position = head;
+
+        while (position != null)
+        {
+            count++;
+            position = position.next;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to linkedlist program");
         LinkedList sList = new LinkedList();
@@ -109,5 +122,9 @@ public class LinkedList {
         sList.delete(0);
         System.out.println("\nLinked List after Deletion : ");
         sList.display();
+
+        //Display the size of linked list
+        System.out.println();
+        System.out.println("The size of the linked list is " + sList.size());
     }
 }
