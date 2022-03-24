@@ -27,5 +27,25 @@ public class Main {
         stack.push(40);
         stack.push(50);
         stack.display();
+
+        // print Top element of Stack
+        System.out.println();
+        System.out.println("After deleting element from the stack");
+        stack.pop();
+        stack.display();
+        System.out.printf("\nTop element is %d\n", stack.peek());
+
+        System.out.println();
+        System.out.println("After deleting element from the stack");
+        stack.pop();
+        stack.display();
+        System.out.printf("\nTop element is %d\n", stack.peek());
+
+        System.out.println();
+        System.out.println("After deleting element from the stack");
+        stack.pop();
+        stack.display();
+        System.out.printf("\nTop element is %d\n", stack.peek());
+
     }
 }
