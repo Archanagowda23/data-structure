@@ -39,6 +39,26 @@ public class LinkedList {
         }
         System.out.println();
     }
+    public int searchNode(int data) {
+        Node current = head;
+        int i = 1;
+        //Checks whether list is empty
+        if(head == null) {
+            System.out.println("List is empty");
+        }
+        else {
+            while(current != null) {
+                //Compares node to be found with each node present in the list
+                if(current.data == data) {
+                    System.out.println(current.data+" Element is present in the list at the position : " + i);
+                    break;
+                }
+                i++;
+                current = current.next;
+            }
+        }
+        return data;
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to linkedlist program");
@@ -52,5 +72,8 @@ public class LinkedList {
 
         System.out.println("\nCreated Linked list is: ");
         sList.display();
+
+        System.out.println();
+        sList.searchNode(30);
     }
 }
